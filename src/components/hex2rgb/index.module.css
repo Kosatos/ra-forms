@@ -1,0 +1,31 @@
+.converter {
+  width: 100%;
+  margin: 50px auto;
+  padding: 100px 25px;
+  border: solid 5px #000;
+  border-radius: 10px;
+}
+
+.converter__form {
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.converter__input {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.converter__result {
+  width: 200px;
+  height: 60px;
+  padding: 15px;
+  margin: 20px auto 0;
+  text-align: center;
+  background-color: #000;
+  font-size: 20px;
+  line-height: 30px;
+  color: #fff;
+}

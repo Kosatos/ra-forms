@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 40px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.step__controllers {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.step__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+.step__icon:hover {
+  background-color: rgb(235, 235, 235);
+}
