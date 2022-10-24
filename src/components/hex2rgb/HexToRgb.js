@@ -23,7 +23,7 @@ export default function HexToRgb() {
   };
 
   function getResult() {
-    if (color.length === 7) {
+    if (color.length >= 7) {
       const result = hexToRgb(color);
       return result ? result : 'Ошибка!';
     }
@@ -31,7 +31,12 @@ export default function HexToRgb() {
   }
 
   return (
-    <div className={styles.converter} style={{ backgroundColor: color }}>
+    <div
+      className={styles.converter}
+      style={{
+        backgroundColor: getResult() === 'Ошибка!' ? 'red' : getResult(),
+      }}
+    >
       <form className={styles.converter__form}>
         <input
           type="text"
