@@ -19,7 +19,7 @@ export default function AddStepForm({ onChangeInput, onSubmitForm, values }) {
       <div className={styles.form__input}>
         <label htmlFor="distance">Пройдено км</label>
         <input
-          type="text"
+          type="number"
           name="distance"
           id="distance"
           value={values.distance}

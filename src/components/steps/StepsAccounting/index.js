@@ -42,16 +42,23 @@ export default function StepsAccounting() {
   };
 
   const handleAddStep = (step) => {
-    setSteps((prevSteps) => {
-      if (prevSteps.some((s) => s.date.format('L') === step.date.format('L'))) {
-        const index = prevSteps.findIndex(
-          (s) => s.date.format('L') === step.date.format('L')
-        );
-        prevSteps[index].distance += step.distance;
-        return [...prevSteps];
-      }
-      return [...prevSteps, step].sort((a, b) => a.date - b.date);
-    });
+    const isSameDate = steps.some(
+      (s) => s.date.format('L') === step.date.format('L')
+    );
+    if (isSameDate) {
+      return setSteps((prevSteps) => {
+        return prevSteps.map((s) => {
+          if (s.date.format('L') === step.date.format('L')) {
+            const totalDistance = s.distance + step.distance;
+            return { ...s, distance: totalDistance };
+          }
+          return s;
+        });
+      });
+    }
+    setSteps((prevSteps) =>
+      [...prevSteps, step].sort((a, b) => b.date - a.date)
+    );
   };
 
   const handleRemoveStep = (id) => {
